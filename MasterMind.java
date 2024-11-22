@@ -1,17 +1,23 @@
-import java.util.Scanner;
+import java.util.Random;
 
 public class MasterMind {
     public static void main(String[] args) {
         System.out.println("Witaj w grze MasterMind!");
 
-        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
 
-        System.out.println("Wprowadż kod dostępu: ");
+        int accessCodeLength = 4;
+        int maxCodeValue = 6;
+        int[] accessCode = new int[accessCodeLength];
 
-        String input = scanner.nextLine();
+        for(int i = 0; i < accessCodeLength; i++) {
+            accessCode[i] = random.nextInt(maxCodeValue) + 1;
+        }
 
-        System.out.println("Wprowadzony kod dostępu to: " + input);
+        System.out.println("Kod dostępu to:");
 
-        scanner.close();
+        for(int i = 0; i < accessCodeLength; i++) {
+            System.out.print(accessCode[i]);
+        }
     }
 }
